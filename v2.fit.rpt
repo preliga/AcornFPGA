@@ -1,6 +1,6 @@
 Fitter report for v2
-Thu Jun 22 23:52:42 2017
-Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Fri Jun 23 01:03:50 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
 ---------------------
@@ -10,70 +10,70 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   2. Fitter Summary
   3. Fitter Settings
   4. Parallel Compilation
-  5. Ignored Assignments
-  6. Incremental Compilation Preservation Summary
-  7. Incremental Compilation Partition Settings
-  8. Incremental Compilation Placement Preservation
-  9. Fitter Resource Usage Summary
- 10. Input Pins
- 11. Output Pins
- 12. Dual Purpose and Dedicated Pins
- 13. I/O Bank Usage
- 14. All Package Pins
- 15. I/O Assignment Warnings
- 16. Fitter Resource Utilization by Entity
- 17. Delay Chain Summary
- 18. Pad To Core Delay Chain Fanout
- 19. I/O Rules Summary
- 20. I/O Rules Details
- 21. I/O Rules Matrix
- 22. Fitter Device Options
- 23. Operating Settings and Conditions
- 24. Fitter Messages
- 25. Fitter Suppressed Messages
+  5. I/O Assignment Warnings
+  6. Ignored Assignments
+  7. Incremental Compilation Preservation Summary
+  8. Incremental Compilation Partition Settings
+  9. Incremental Compilation Placement Preservation
+ 10. Fitter Resource Usage Summary
+ 11. Input Pins
+ 12. Output Pins
+ 13. Dual Purpose and Dedicated Pins
+ 14. I/O Bank Usage
+ 15. All Package Pins
+ 16. Output Pin Default Load For Reported TCO
+ 17. Fitter Resource Utilization by Entity
+ 18. Delay Chain Summary
+ 19. Pad To Core Delay Chain Fanout
+ 20. Non-Global High Fan-Out Signals
+ 21. I/O Rules Summary
+ 22. I/O Rules Details
+ 23. I/O Rules Matrix
+ 24. Fitter Device Options
+ 25. Operating Settings and Conditions
+ 26. Fitter Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2016  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Intel and sold by Intel or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Fitter Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Failed - Thu Jun 22 23:52:42 2017           ;
-; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
-; Revision Name                      ; v2                                          ;
-; Top-level Entity Name              ; acorn_coprocesor                            ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE6E22C8                                 ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1 / 6,272 ( < 1 % )                         ;
-;     Total combinational functions  ; 1 / 6,272 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 0 / 6,272 ( 0 % )                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 100 / 92 ( 109 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
-; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
-; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Fitter Summary                                                                    ;
++------------------------------------+----------------------------------------------+
+; Fitter Status                      ; Failed - Fri Jun 23 01:03:50 2017            ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                      ; v2                                           ;
+; Top-level Entity Name              ; acorn_coprocesor                             ;
+; Family                             ; Cyclone IV E                                 ;
+; Device                             ; EP4CE6E22C8                                  ;
+; Timing Models                      ; Preliminary                                  ;
+; Total logic elements               ; 1 / 6,272 ( < 1 % )                          ;
+;     Total combinational functions  ; 1 / 6,272 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 0 / 6,272 ( 0 % )                            ;
+; Total registers                    ; 0                                            ;
+; Total pins                         ; 100 / 92 ( 109 % )                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0 / 276,480 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                               ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                ;
++------------------------------------+----------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -86,35 +86,34 @@ agreement for further details.
 ; Maximum Core Junction Temperature                                          ; 85                                    ;                                       ;
 ; Fit Attempts to Skip                                                       ; 0                                     ; 0.0                                   ;
 ; Device I/O Standard                                                        ; 2.5 V                                 ;                                       ;
+; Optimize Multi-Corner Timing                                               ; On                                    ; Off                                   ;
+; Synchronizer Identification                                                ; Auto                                  ; Off                                   ;
 ; Use smart compilation                                                      ; Off                                   ; Off                                   ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                                    ; On                                    ;
 ; Enable compact report table                                                ; Off                                   ; Off                                   ;
-; Auto Merge PLLs                                                            ; On                                    ; On                                    ;
+; Use TimeQuest Timing Analyzer                                              ; On                                    ; On                                    ;
 ; Router Timing Optimization Level                                           ; Normal                                ; Normal                                ;
-; Perform Clocking Topology Analysis During Routing                          ; Off                                   ; Off                                   ;
 ; Placement Effort Multiplier                                                ; 1.0                                   ; 1.0                                   ;
 ; Router Effort Multiplier                                                   ; 1.0                                   ; 1.0                                   ;
 ; Optimize Hold Timing                                                       ; All Paths                             ; All Paths                             ;
-; Optimize Multi-Corner Timing                                               ; On                                    ; On                                    ;
-; PowerPlay Power Optimization During Fitting                                ; Normal compilation                    ; Normal compilation                    ;
+; PowerPlay Power Optimization                                               ; Normal compilation                    ; Normal compilation                    ;
 ; SSN Optimization                                                           ; Off                                   ; Off                                   ;
 ; Optimize Timing                                                            ; Normal compilation                    ; Normal compilation                    ;
 ; Optimize Timing for ECOs                                                   ; Off                                   ; Off                                   ;
-; Regenerate Full Fit Report During ECO Compiles                             ; Off                                   ; Off                                   ;
-; Optimize IOC Register Placement for Timing                                 ; Normal                                ; Normal                                ;
+; Regenerate full fit report during ECO compiles                             ; Off                                   ; Off                                   ;
+; Optimize IOC Register Placement for Timing                                 ; On                                    ; On                                    ;
 ; Limit to One Fitting Attempt                                               ; Off                                   ; Off                                   ;
 ; Final Placement Optimizations                                              ; Automatically                         ; Automatically                         ;
 ; Fitter Aggressive Routability Optimizations                                ; Automatically                         ; Automatically                         ;
 ; Fitter Initial Placement Seed                                              ; 1                                     ; 1                                     ;
-; Periphery to Core Placement and Routing Optimization                       ; Off                                   ; Off                                   ;
 ; PCI I/O                                                                    ; Off                                   ; Off                                   ;
 ; Weak Pull-Up Resistor                                                      ; Off                                   ; Off                                   ;
 ; Enable Bus-Hold Circuitry                                                  ; Off                                   ; Off                                   ;
 ; Auto Packed Registers                                                      ; Auto                                  ; Auto                                  ;
 ; Auto Delay Chains                                                          ; On                                    ; On                                    ;
-; Auto Delay Chains for High Fanout Input Pins                               ; Off                                   ; Off                                   ;
 ; Allow Single-ended Buffer for Differential-XSTL Input                      ; Off                                   ; Off                                   ;
 ; Treat Bidirectional Pin as Output Pin                                      ; Off                                   ; Off                                   ;
+; Auto Merge PLLs                                                            ; On                                    ; On                                    ;
 ; Perform Physical Synthesis for Combinational Logic for Fitting             ; Off                                   ; Off                                   ;
 ; Perform Physical Synthesis for Combinational Logic for Performance         ; Off                                   ; Off                                   ;
 ; Perform Register Duplication for Performance                               ; Off                                   ; Off                                   ;
@@ -128,28 +127,64 @@ agreement for further details.
 ; Auto Global Clock                                                          ; On                                    ; On                                    ;
 ; Auto Global Register Control Signals                                       ; On                                    ; On                                    ;
 ; Reserve all unused pins                                                    ; As input tri-stated with weak pull-up ; As input tri-stated with weak pull-up ;
-; Synchronizer Identification                                                ; Auto                                  ; Auto                                  ;
+; Stop After Congestion Map Generation                                       ; Off                                   ; Off                                   ;
+; Save Intermediate Fitting Results                                          ; Off                                   ; Off                                   ;
 ; Enable Beneficial Skew Optimization                                        ; On                                    ; On                                    ;
 ; Optimize Design for Metastability                                          ; On                                    ; On                                    ;
 ; Force Fitter to Avoid Periphery Placement Warnings                         ; Off                                   ; Off                                   ;
-; Enable input tri-state on active configuration pins in user mode           ; Off                                   ; Off                                   ;
+; Use Best Effort Settings for Compilation                                   ; Off                                   ; Off                                   ;
 +----------------------------------------------------------------------------+---------------------------------------+---------------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------+
+; I/O Assignment Warnings                         ;
++----------+--------------------------------------+
+; Pin Name ; Reason                               ;
++----------+--------------------------------------+
+; DOUT[0]  ; Missing drive strength and slew rate ;
+; DOUT[1]  ; Missing drive strength and slew rate ;
+; DOUT[2]  ; Missing drive strength and slew rate ;
+; DOUT[3]  ; Missing drive strength and slew rate ;
+; DOUT[4]  ; Missing drive strength and slew rate ;
+; DOUT[5]  ; Missing drive strength and slew rate ;
+; DOUT[6]  ; Missing drive strength and slew rate ;
+; DOUT[7]  ; Missing drive strength and slew rate ;
+; DOUT[8]  ; Missing drive strength and slew rate ;
+; DOUT[9]  ; Missing drive strength and slew rate ;
+; DOUT[10] ; Missing drive strength and slew rate ;
+; DOUT[11] ; Missing drive strength and slew rate ;
+; DOUT[12] ; Missing drive strength and slew rate ;
+; DOUT[13] ; Missing drive strength and slew rate ;
+; DOUT[14] ; Missing drive strength and slew rate ;
+; DOUT[15] ; Missing drive strength and slew rate ;
+; DOUT[16] ; Missing drive strength and slew rate ;
+; DOUT[17] ; Missing drive strength and slew rate ;
+; DOUT[18] ; Missing drive strength and slew rate ;
+; DOUT[19] ; Missing drive strength and slew rate ;
+; DOUT[20] ; Missing drive strength and slew rate ;
+; DOUT[21] ; Missing drive strength and slew rate ;
+; DOUT[22] ; Missing drive strength and slew rate ;
+; DOUT[23] ; Missing drive strength and slew rate ;
+; DOUT[24] ; Missing drive strength and slew rate ;
+; DOUT[25] ; Missing drive strength and slew rate ;
+; DOUT[26] ; Missing drive strength and slew rate ;
+; DOUT[27] ; Missing drive strength and slew rate ;
+; DOUT[28] ; Missing drive strength and slew rate ;
+; DOUT[29] ; Missing drive strength and slew rate ;
+; DOUT[30] ; Missing drive strength and slew rate ;
+; DOUT[31] ; Missing drive strength and slew rate ;
++----------+--------------------------------------+
 
 
 +----------------------------------------------------------------------------------------+
@@ -162,39 +197,41 @@ agreement for further details.
 +----------+----------------+--------------+------------+---------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Incremental Compilation Preservation Summary                                                     ;
-+---------------------+--------------------+----------------------------+--------------------------+
-; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
-+---------------------+--------------------+----------------------------+--------------------------+
-; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 211 ) ; 0.00 % ( 0 / 211 )         ; 0.00 % ( 0 / 211 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 211 ) ; 0.00 % ( 0 / 211 )         ; 0.00 % ( 0 / 211 )       ;
-;                     ;                    ;                            ;                          ;
-; Routing (by net)    ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
-;     -- Achieved     ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
-+---------------------+--------------------+----------------------------+--------------------------+
++----------------------------------------------+
+; Incremental Compilation Preservation Summary ;
++-------------------------+--------------------+
+; Type                    ; Value              ;
++-------------------------+--------------------+
+; Netlist                 ;                    ;
+;     -- Requested        ; 0 / 0 ( 0.00 % )   ;
+;     -- Achieved         ; 0 / 0 ( 0.00 % )   ;
+;                         ;                    ;
+; Placement               ;                    ;
+;     -- Requested        ; 0 / 211 ( 0.00 % ) ;
+;     -- Achieved         ; 0 / 211 ( 0.00 % ) ;
+;                         ;                    ;
+; Routing (by Connection) ;                    ;
+;     -- Requested        ; 0 / 0 ( 0.00 % )   ;
+;     -- Achieved         ; 0 / 0 ( 0.00 % )   ;
++-------------------------+--------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Incremental Compilation Partition Settings                                                                                                                                             ;
-+--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
-; Partition Name                 ; Partition Type ; Netlist Type Used ; Preservation Level Used ; Netlist Type Requested ; Preservation Level Requested ; Contents                       ;
-+--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
-; Top                            ; User-created   ; Source File       ; N/A                     ; Source File            ; N/A                          ;                                ;
-; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; N/A                     ; Source File            ; N/A                          ; hard_block:auto_generated_inst ;
-+--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Incremental Compilation Partition Settings                                                                                                       ;
++----------------+----------------+-------------------+-------------------------+------------------------+------------------------------+----------+
+; Partition Name ; Partition Type ; Netlist Type Used ; Preservation Level Used ; Netlist Type Requested ; Preservation Level Requested ; Contents ;
++----------------+----------------+-------------------+-------------------------+------------------------+------------------------------+----------+
+; Top            ; User-created   ; Source File       ; N/A                     ; Source File            ; N/A                          ;          ;
++----------------+----------------+-------------------+-------------------------+------------------------+------------------------------+----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Incremental Compilation Placement Preservation                                                                                     ;
-+--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
-+--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 201 )    ; N/A                     ; Source File       ; N/A                 ;       ;
-; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
-+--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
++--------------------------------------------------------------------------------------------+
+; Incremental Compilation Placement Preservation                                             ;
++----------------+---------+-------------------+-------------------------+-------------------+
+; Partition Name ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
++----------------+---------+-------------------+-------------------------+-------------------+
+; Top            ; 211     ; 0                 ; N/A                     ; Source File       ;
++----------------+---------+-------------------+-------------------------+-------------------+
 
 
 +-------------------------------------------------------------------+
@@ -222,24 +259,25 @@ agreement for further details.
 ;     -- I/O registers                        ; 0 / 412 ( 0 % )     ;
 ;                                             ;                     ;
 ; Total LABs                                  ; Not available       ;
+; User inserted logic elements                ; 0                   ;
 ; Virtual pins                                ; 0                   ;
 ; I/O pins                                    ; 100 / 92 ( 109 % )  ;
 ;     -- Clock pins                           ; 0 / 3 ( 0 % )       ;
 ;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )       ;
-;                                             ;                     ;
+; Global signals                              ; 0                   ;
 ; M9Ks                                        ; 0 / 30 ( 0 % )      ;
 ; Total block memory bits                     ; 0 / 276,480 ( 0 % ) ;
 ; Total block memory implementation bits      ; 0 / 276,480 ( 0 % ) ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 30 ( 0 % )      ;
 ; PLLs                                        ; 0 / 2 ( 0 % )       ;
-; Global signals                              ; 0                   ;
-;     -- Global clocks                        ; 0 / 10 ( 0 % )      ;
+; Global clocks                               ; 0 / 10 ( 0 % )      ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )       ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )       ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )       ;
-; Oscillator blocks                           ; 0 / 1 ( 0 % )       ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )       ;
+; Maximum fan-out node                        ; DOUT[0]~output      ;
 ; Maximum fan-out                             ; 1                   ;
+; Highest non-global fan-out signal           ; DOUT[0]~output      ;
 ; Highest non-global fan-out                  ; 1                   ;
 ; Total fan-out                               ; 105                 ;
 ; Average fan-out                             ; 0.50                ;
@@ -248,120 +286,120 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                                                                                                        ;
-+----------+------------+----------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; Name     ; Pin #      ; I/O Bank ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
-+----------+------------+----------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; ADDR[0]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[10] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[11] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[12] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[13] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[14] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[15] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[16] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[17] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[18] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[19] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[1]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[20] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[21] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[22] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[23] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[24] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[25] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[26] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[27] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[28] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[29] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[2]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[30] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[31] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[3]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[4]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[5]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[6]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[7]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[8]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADDR[9]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; CLK      ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; DIN[0]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[10]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[11]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[12]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[13]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[14]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[15]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[16]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[17]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[18]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[19]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[1]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[20]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[21]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[22]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[23]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[24]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[25]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[26]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[27]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[28]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[29]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[2]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[30]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[31]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[3]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[4]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[5]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[6]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[7]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[8]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; DIN[9]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; INIT     ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; RD       ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; WR       ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-+----------+------------+----------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                            ;
++----------+------------+----------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
+; Name     ; Pin #      ; I/O Bank ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ;
++----------+------------+----------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
+; ADDR[0]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[10] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[11] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[12] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[13] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[14] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[15] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[16] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[17] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[18] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[19] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[1]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[20] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[21] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[22] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[23] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[24] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[25] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[26] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[27] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[28] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[29] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[2]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[30] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[31] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[3]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[4]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[5]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[6]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[7]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[8]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; ADDR[9]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; CLK      ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DIN[0]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[10]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[11]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[12]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[13]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[14]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[15]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[16]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[17]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[18]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[19]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[1]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[20]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[21]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[22]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[23]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[24]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[25]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[26]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[27]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[28]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[29]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[2]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[30]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[31]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[3]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[4]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[5]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[6]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[7]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[8]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DIN[9]   ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; INIT     ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; RD       ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; WR       ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
++----------+------------+----------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                       ;
-+----------+------------+----------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
-; Name     ; Pin #      ; I/O Bank ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
-+----------+------------+----------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
-; DOUT[0]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[10] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[11] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[12] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[13] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[14] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[15] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[16] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[17] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[18] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[19] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[1]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[20] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[21] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[22] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[23] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[24] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[25] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[26] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[27] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[28] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[29] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[2]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[30] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[31] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[3]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[4]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[5]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[6]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[7]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[8]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; DOUT[9]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-+----------+------------+----------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                              ;
++----------+------------+----------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+------+----------------------+---------------------+
+; Name     ; Pin #      ; I/O Bank ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
++----------+------------+----------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+------+----------------------+---------------------+
+; DOUT[0]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[10] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[11] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[12] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[13] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[14] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[15] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[16] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[17] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[18] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[19] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[1]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[20] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[21] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[22] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[23] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[24] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[25] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[26] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[27] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[28] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[29] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[2]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[30] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[31] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[3]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[4]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[5]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[6]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[7]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[8]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
+; DOUT[9]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; 0 pF ; -                    ; -                   ;
++----------+------------+----------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+------+----------------------+---------------------+
 
 
 +-----------------------------------------------------------------------------------+
@@ -408,7 +446,7 @@ agreement for further details.
 ; 4        ;            ;          ; GND                             ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 5        ;            ;          ; VCCINT                          ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 6        ; 5          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; 7        ; 6          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 7        ; 6          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 8        ; 7          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 9        ; 9          ; 1        ; ^nSTATUS                        ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; 10       ; 13         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -432,7 +470,7 @@ agreement for further details.
 ; 28       ; 31         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 29       ;            ;          ; VCCINT                          ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 30       ; 34         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; 31       ; 36         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 31       ; 36         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 32       ; 39         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 33       ; 40         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 34       ; 41         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -447,7 +485,7 @@ agreement for further details.
 ; 43       ; 53         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 44       ; 54         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 45       ;            ;          ; VCCINT                          ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; 46       ; 58         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; 46       ; 58         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 47       ;            ; 3        ; VCCIO3                          ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 48       ;            ;          ; GND                             ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 49       ; 68         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -466,7 +504,7 @@ agreement for further details.
 ; 62       ;            ; 4        ; VCCIO4                          ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 63       ;            ;          ; GND                             ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 64       ; 89         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 65       ; 90         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; 65       ; 90         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 66       ; 93         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 67       ; 94         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 68       ; 96         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -481,7 +519,7 @@ agreement for further details.
 ; 77       ; 107        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 78       ;            ;          ; VCCINT                          ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 79       ;            ;          ; GND                             ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 80       ; 113        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 80       ; 113        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 81       ;            ; 5        ; VCCIO5                          ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 82       ;            ;          ; GND                             ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 83       ; 117        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -507,7 +545,7 @@ agreement for further details.
 ; 102      ;            ;          ; VCCINT                          ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 103      ; 140        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 104      ; 141        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; 105      ; 142        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 105      ; 142        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 106      ; 146        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 107      ;            ; --       ; VCCA2                           ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 108      ;            ;          ; GNDA2                           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -521,7 +559,7 @@ agreement for further details.
 ; 116      ;            ;          ; VCCINT                          ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 117      ;            ; 7        ; VCCIO7                          ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 118      ;            ;          ; GND                             ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 119      ; 163        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; 119      ; 163        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 120      ; 164        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 121      ; 165        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 122      ;            ; 7        ; VCCIO7                          ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -538,7 +576,7 @@ agreement for further details.
 ; 133      ; 182        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 134      ;            ;          ; VCCINT                          ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 135      ; 185        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 136      ; 187        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; 136      ; 187        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 137      ; 190        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 138      ; 191        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 139      ;            ; 8        ; VCCIO8                          ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -552,152 +590,63 @@ agreement for further details.
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
 
-+-------------------------------------------------+
-; I/O Assignment Warnings                         ;
-+----------+--------------------------------------+
-; Pin Name ; Reason                               ;
-+----------+--------------------------------------+
-; DOUT[0]  ; Missing drive strength and slew rate ;
-; DOUT[1]  ; Missing drive strength and slew rate ;
-; DOUT[2]  ; Missing drive strength and slew rate ;
-; DOUT[3]  ; Missing drive strength and slew rate ;
-; DOUT[4]  ; Missing drive strength and slew rate ;
-; DOUT[5]  ; Missing drive strength and slew rate ;
-; DOUT[6]  ; Missing drive strength and slew rate ;
-; DOUT[7]  ; Missing drive strength and slew rate ;
-; DOUT[8]  ; Missing drive strength and slew rate ;
-; DOUT[9]  ; Missing drive strength and slew rate ;
-; DOUT[10] ; Missing drive strength and slew rate ;
-; DOUT[11] ; Missing drive strength and slew rate ;
-; DOUT[12] ; Missing drive strength and slew rate ;
-; DOUT[13] ; Missing drive strength and slew rate ;
-; DOUT[14] ; Missing drive strength and slew rate ;
-; DOUT[15] ; Missing drive strength and slew rate ;
-; DOUT[16] ; Missing drive strength and slew rate ;
-; DOUT[17] ; Missing drive strength and slew rate ;
-; DOUT[18] ; Missing drive strength and slew rate ;
-; DOUT[19] ; Missing drive strength and slew rate ;
-; DOUT[20] ; Missing drive strength and slew rate ;
-; DOUT[21] ; Missing drive strength and slew rate ;
-; DOUT[22] ; Missing drive strength and slew rate ;
-; DOUT[23] ; Missing drive strength and slew rate ;
-; DOUT[24] ; Missing drive strength and slew rate ;
-; DOUT[25] ; Missing drive strength and slew rate ;
-; DOUT[26] ; Missing drive strength and slew rate ;
-; DOUT[27] ; Missing drive strength and slew rate ;
-; DOUT[28] ; Missing drive strength and slew rate ;
-; DOUT[29] ; Missing drive strength and slew rate ;
-; DOUT[30] ; Missing drive strength and slew rate ;
-; DOUT[31] ; Missing drive strength and slew rate ;
-; DOUT[0]  ; Missing location assignment          ;
-; DOUT[1]  ; Missing location assignment          ;
-; DOUT[2]  ; Missing location assignment          ;
-; DOUT[3]  ; Missing location assignment          ;
-; DOUT[4]  ; Missing location assignment          ;
-; DOUT[5]  ; Missing location assignment          ;
-; DOUT[6]  ; Missing location assignment          ;
-; DOUT[7]  ; Missing location assignment          ;
-; DOUT[8]  ; Missing location assignment          ;
-; DOUT[9]  ; Missing location assignment          ;
-; DOUT[10] ; Missing location assignment          ;
-; DOUT[11] ; Missing location assignment          ;
-; DOUT[12] ; Missing location assignment          ;
-; DOUT[13] ; Missing location assignment          ;
-; DOUT[14] ; Missing location assignment          ;
-; DOUT[15] ; Missing location assignment          ;
-; DOUT[16] ; Missing location assignment          ;
-; DOUT[17] ; Missing location assignment          ;
-; DOUT[18] ; Missing location assignment          ;
-; DOUT[19] ; Missing location assignment          ;
-; DOUT[20] ; Missing location assignment          ;
-; DOUT[21] ; Missing location assignment          ;
-; DOUT[22] ; Missing location assignment          ;
-; DOUT[23] ; Missing location assignment          ;
-; DOUT[24] ; Missing location assignment          ;
-; DOUT[25] ; Missing location assignment          ;
-; DOUT[26] ; Missing location assignment          ;
-; DOUT[27] ; Missing location assignment          ;
-; DOUT[28] ; Missing location assignment          ;
-; DOUT[29] ; Missing location assignment          ;
-; DOUT[30] ; Missing location assignment          ;
-; DOUT[31] ; Missing location assignment          ;
-; RD       ; Missing location assignment          ;
-; WR       ; Missing location assignment          ;
-; ADDR[0]  ; Missing location assignment          ;
-; ADDR[1]  ; Missing location assignment          ;
-; ADDR[2]  ; Missing location assignment          ;
-; ADDR[3]  ; Missing location assignment          ;
-; ADDR[4]  ; Missing location assignment          ;
-; ADDR[5]  ; Missing location assignment          ;
-; ADDR[6]  ; Missing location assignment          ;
-; ADDR[7]  ; Missing location assignment          ;
-; ADDR[8]  ; Missing location assignment          ;
-; ADDR[9]  ; Missing location assignment          ;
-; ADDR[10] ; Missing location assignment          ;
-; ADDR[11] ; Missing location assignment          ;
-; ADDR[12] ; Missing location assignment          ;
-; ADDR[13] ; Missing location assignment          ;
-; ADDR[14] ; Missing location assignment          ;
-; ADDR[15] ; Missing location assignment          ;
-; ADDR[16] ; Missing location assignment          ;
-; ADDR[17] ; Missing location assignment          ;
-; ADDR[18] ; Missing location assignment          ;
-; ADDR[19] ; Missing location assignment          ;
-; ADDR[20] ; Missing location assignment          ;
-; ADDR[21] ; Missing location assignment          ;
-; ADDR[22] ; Missing location assignment          ;
-; ADDR[23] ; Missing location assignment          ;
-; ADDR[24] ; Missing location assignment          ;
-; ADDR[25] ; Missing location assignment          ;
-; ADDR[26] ; Missing location assignment          ;
-; ADDR[27] ; Missing location assignment          ;
-; ADDR[28] ; Missing location assignment          ;
-; ADDR[29] ; Missing location assignment          ;
-; ADDR[30] ; Missing location assignment          ;
-; ADDR[31] ; Missing location assignment          ;
-; DIN[0]   ; Missing location assignment          ;
-; DIN[1]   ; Missing location assignment          ;
-; DIN[2]   ; Missing location assignment          ;
-; DIN[3]   ; Missing location assignment          ;
-; DIN[4]   ; Missing location assignment          ;
-; DIN[5]   ; Missing location assignment          ;
-; DIN[6]   ; Missing location assignment          ;
-; DIN[7]   ; Missing location assignment          ;
-; DIN[8]   ; Missing location assignment          ;
-; DIN[9]   ; Missing location assignment          ;
-; DIN[10]  ; Missing location assignment          ;
-; DIN[11]  ; Missing location assignment          ;
-; DIN[12]  ; Missing location assignment          ;
-; DIN[13]  ; Missing location assignment          ;
-; DIN[14]  ; Missing location assignment          ;
-; DIN[15]  ; Missing location assignment          ;
-; DIN[16]  ; Missing location assignment          ;
-; DIN[17]  ; Missing location assignment          ;
-; DIN[18]  ; Missing location assignment          ;
-; DIN[19]  ; Missing location assignment          ;
-; DIN[20]  ; Missing location assignment          ;
-; DIN[21]  ; Missing location assignment          ;
-; DIN[22]  ; Missing location assignment          ;
-; DIN[23]  ; Missing location assignment          ;
-; DIN[24]  ; Missing location assignment          ;
-; DIN[25]  ; Missing location assignment          ;
-; DIN[26]  ; Missing location assignment          ;
-; DIN[27]  ; Missing location assignment          ;
-; DIN[28]  ; Missing location assignment          ;
-; DIN[29]  ; Missing location assignment          ;
-; DIN[30]  ; Missing location assignment          ;
-; DIN[31]  ; Missing location assignment          ;
-; INIT     ; Missing location assignment          ;
-+----------+--------------------------------------+
++-------------------------------------------------------------------------------+
+; Output Pin Default Load For Reported TCO                                      ;
++----------------------------------+-------+------------------------------------+
+; I/O Standard                     ; Load  ; Termination Resistance             ;
++----------------------------------+-------+------------------------------------+
+; 3.0-V LVTTL                      ; 0 pF  ; Not Available                      ;
+; 3.3-V LVTTL                      ; 0 pF  ; Not Available                      ;
+; 3.0-V LVCMOS                     ; 0 pF  ; Not Available                      ;
+; 3.3-V LVCMOS                     ; 0 pF  ; Not Available                      ;
+; 3.0-V PCI                        ; 10 pF ; Not Available                      ;
+; 3.0-V PCI-X                      ; 10 pF ; Not Available                      ;
+; 2.5 V                            ; 0 pF  ; Not Available                      ;
+; 1.8 V                            ; 0 pF  ; Not Available                      ;
+; 1.5 V                            ; 0 pF  ; Not Available                      ;
+; 1.2 V                            ; 0 pF  ; Not Available                      ;
+; SSTL-2 Class I                   ; 0 pF  ; 50 Ohm (Parallel), 25 Ohm (Serial) ;
+; Differential 2.5-V SSTL Class I  ; 0 pF  ; (See SSTL-2)                       ;
+; SSTL-2 Class II                  ; 0 pF  ; 25 Ohm (Parallel), 25 Ohm (Serial) ;
+; Differential 2.5-V SSTL Class II ; 0 pF  ; (See SSTL-2 Class II)              ;
+; SSTL-18 Class I                  ; 0 pF  ; 50 Ohm (Parallel), 25 Ohm (Serial) ;
+; Differential 1.8-V SSTL Class I  ; 0 pF  ; (See 1.8-V SSTL Class I)           ;
+; SSTL-18 Class II                 ; 0 pF  ; 25 Ohm (Parallel), 25 Ohm (Serial) ;
+; Differential 1.8-V SSTL Class II ; 0 pF  ; (See 1.8-V SSTL Class II)          ;
+; 1.8-V HSTL Class I               ; 0 pF  ; 50 Ohm (Parallel)                  ;
+; Differential 1.8-V HSTL Class I  ; 0 pF  ; (See 1.8-V HSTL Class I)           ;
+; 1.8-V HSTL Class II              ; 0 pF  ; 25 Ohm (Parallel)                  ;
+; Differential 1.8-V HSTL Class II ; 0 pF  ; (See 1.8-V HSTL Class II)          ;
+; 1.5-V HSTL Class I               ; 0 pF  ; 50 Ohm (Parallel)                  ;
+; Differential 1.5-V HSTL Class I  ; 0 pF  ; (See 1.5-V HSTL Class I)           ;
+; 1.5-V HSTL Class II              ; 0 pF  ; 25 Ohm (Parallel)                  ;
+; Differential 1.5-V HSTL Class II ; 0 pF  ; (See 1.5-V HSTL Class II)          ;
+; 1.2-V HSTL Class I               ; 0 pF  ; Not Available                      ;
+; Differential 1.2-V HSTL Class I  ; 0 pF  ; Not Available                      ;
+; 1.2-V HSTL Class II              ; 0 pF  ; Not Available                      ;
+; Differential 1.2-V HSTL Class II ; 0 pF  ; Not Available                      ;
+; Differential LVPECL              ; 0 pF  ; 100 Ohm (Differential)             ;
+; LVDS                             ; 0 pF  ; 100 Ohm (Differential)             ;
+; LVDS_E_3R                        ; 0 pF  ; Not Available                      ;
+; RSDS                             ; 0 pF  ; 100 Ohm (Differential)             ;
+; RSDS_E_1R                        ; 0 pF  ; Not Available                      ;
+; RSDS_E_3R                        ; 0 pF  ; Not Available                      ;
+; mini-LVDS                        ; 0 pF  ; 100 Ohm (Differential)             ;
+; mini-LVDS_E_3R                   ; 0 pF  ; Not Available                      ;
+; PPDS                             ; 0 pF  ; Not Available                      ;
+; PPDS_E_3R                        ; 0 pF  ; Not Available                      ;
+; Bus LVDS                         ; 0 pF  ; Not Available                      ;
++----------------------------------+-------+------------------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                       ;
-+----------------------------+-------------+---------------------------+---------------+-------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Entity Name      ; Library Name ;
-+----------------------------+-------------+---------------------------+---------------+-------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+------------------+--------------+
-; |acorn_coprocesor          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 100  ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |acorn_coprocesor   ; acorn_coprocesor ; work         ;
-+----------------------------+-------------+---------------------------+---------------+-------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                    ;
++----------------------------+-------------+---------------------------+---------------+-------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+---------------------------+---------------+-------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
+; |acorn_coprocesor          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 100  ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |acorn_coprocesor   ; work         ;
++----------------------------+-------------+---------------------------+---------------+-------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -885,6 +834,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 
 
++-----------------------------------+
+; Non-Global High Fan-Out Signals   ;
++-------------------------+---------+
+; Name                    ; Fan-Out ;
++-------------------------+---------+
+; ~ALTERA_nCEO~~obuf      ; 1       ;
+; ~ALTERA_DATA0~          ; 1       ;
+; ~ALTERA_DCLK~~obuf      ; 1       ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 1       ;
+; ~ALTERA_ASDO_DATA1~     ; 1       ;
+; INIT                    ; 1       ;
+; DIN[31]                 ; 1       ;
+; DIN[30]                 ; 1       ;
+; DIN[29]                 ; 1       ;
+; DIN[28]                 ; 1       ;
+; DIN[27]                 ; 1       ;
+; DIN[26]                 ; 1       ;
+; DIN[25]                 ; 1       ;
+; DIN[24]                 ; 1       ;
+; DIN[23]                 ; 1       ;
+; DIN[22]                 ; 1       ;
+; DIN[21]                 ; 1       ;
+; DIN[20]                 ; 1       ;
+; DIN[19]                 ; 1       ;
+; DIN[18]                 ; 1       ;
+; DIN[17]                 ; 1       ;
+; DIN[16]                 ; 1       ;
+; DIN[15]                 ; 1       ;
+; DIN[14]                 ; 1       ;
+; DIN[13]                 ; 1       ;
+; DIN[12]                 ; 1       ;
+; DIN[11]                 ; 1       ;
+; DIN[10]                 ; 1       ;
+; DIN[9]                  ; 1       ;
+; DIN[8]                  ; 1       ;
+; DIN[7]                  ; 1       ;
+; DIN[6]                  ; 1       ;
+; DIN[5]                  ; 1       ;
+; DIN[4]                  ; 1       ;
+; DIN[3]                  ; 1       ;
+; DIN[2]                  ; 1       ;
+; DIN[1]                  ; 1       ;
+; DIN[0]                  ; 1       ;
+; ADDR[31]                ; 1       ;
+; ADDR[30]                ; 1       ;
+; ADDR[29]                ; 1       ;
+; ADDR[28]                ; 1       ;
+; ADDR[27]                ; 1       ;
+; ADDR[26]                ; 1       ;
+; ADDR[25]                ; 1       ;
+; ADDR[24]                ; 1       ;
+; ADDR[23]                ; 1       ;
+; ADDR[22]                ; 1       ;
+; ADDR[21]                ; 1       ;
+; ADDR[20]                ; 1       ;
++-------------------------+---------+
+
+
 +------------------------------------------+
 ; I/O Rules Summary                        ;
 +----------------------------------+-------+
@@ -1049,29 +1056,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Fitter Device Options                                                                       ;
-+------------------------------------------------------------------+--------------------------+
-; Option                                                           ; Setting                  ;
-+------------------------------------------------------------------+--------------------------+
-; Enable user-supplied start-up clock (CLKUSR)                     ; Off                      ;
-; Enable device-wide reset (DEV_CLRn)                              ; Off                      ;
-; Enable device-wide output enable (DEV_OE)                        ; Off                      ;
-; Enable INIT_DONE output                                          ; Off                      ;
-; Configuration scheme                                             ; Active Serial            ;
-; Error detection CRC                                              ; Off                      ;
-; Enable open drain on CRC_ERROR pin                               ; Off                      ;
-; Enable input tri-state on active configuration pins in user mode ; Off                      ;
-; Configuration Voltage Level                                      ; Auto                     ;
-; Force Configuration Voltage Level                                ; Off                      ;
-; nCEO                                                             ; As output driving ground ;
-; Data[0]                                                          ; As input tri-stated      ;
-; Data[1]/ASDO                                                     ; As input tri-stated      ;
-; Data[7..2]                                                       ; Unreserved               ;
-; FLASH_nCE/nCSO                                                   ; As input tri-stated      ;
-; Other Active Parallel pins                                       ; Unreserved               ;
-; DCLK                                                             ; As output driving ground ;
-+------------------------------------------------------------------+--------------------------+
++-------------------------------------------------------------------------+
+; Fitter Device Options                                                   ;
++----------------------------------------------+--------------------------+
+; Option                                       ; Setting                  ;
++----------------------------------------------+--------------------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off                      ;
+; Enable device-wide reset (DEV_CLRn)          ; Off                      ;
+; Enable device-wide output enable (DEV_OE)    ; Off                      ;
+; Enable INIT_DONE output                      ; Off                      ;
+; Configuration scheme                         ; Active Serial            ;
+; Error detection CRC                          ; Off                      ;
+; Enable Open Drain on CRC Error pin           ; Off                      ;
+; Configuration Voltage Level                  ; Auto                     ;
+; Force Configuration Voltage Level            ; Off                      ;
+; nCEO                                         ; As output driving ground ;
+; Data[0]                                      ; As input tri-stated      ;
+; Data[1]/ASDO                                 ; As input tri-stated      ;
+; Data[7..2]                                   ; Unreserved               ;
+; FLASH_nCE/nCSO                               ; As input tri-stated      ;
+; Other Active Parallel pins                   ; Unreserved               ;
+; DCLK                                         ; As output driving ground ;
+; Base pin-out file on sameframe device        ; Off                      ;
++----------------------------------------------+--------------------------+
 
 
 +------------------------------------+
@@ -1088,107 +1095,209 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (119006): Selected device EP4CE6E22C8 for design "v2"
-Info (21077): Low junction temperature is 0 degrees C
-Info (21077): High junction temperature is 85 degrees C
-Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
-Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
-Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
-    Info (176445): Device EP4CE10E22C8 is compatible
-    Info (176445): Device EP4CE15E22C8 is compatible
-    Info (176445): Device EP4CE22E22C8 is compatible
-Info (169124): Fitter converted 5 user pins into dedicated programming pins
-    Info (169125): Pin ~ALTERA_ASDO_DATA1~ is reserved at location 6
-    Info (169125): Pin ~ALTERA_FLASH_nCE_nCSO~ is reserved at location 8
-    Info (169125): Pin ~ALTERA_DCLK~ is reserved at location 12
-    Info (169125): Pin ~ALTERA_DATA0~ is reserved at location 13
-    Info (169125): Pin ~ALTERA_nCEO~ is reserved at location 101
-Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
-Critical Warning (169085): No exact pin location assignment(s) for 99 pins of 100 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
-Critical Warning (332012): Synopsys Design Constraints File file not found: 'v2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
-Info (332144): No user constrained base clocks found in the design
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
-Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176233): Starting register packing
-Info (176235): Finished register packing
-    Extra Info (176219): No registers were packed into other blocks
-Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info (176211): Number of I/O pins in group: 99 (unused VREF, 2.5V VCCIO, 67 input, 32 output, 0 bidirectional)
-        Info (176212): I/O standards used: 2.5 V.
-Info (176215): I/O bank details before I/O pin placement
-    Info (176214): Statistics of I/O banks
-        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 5 total pin(s) used --  6 pins available
-        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  8 pins available
-        Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  11 pins available
-        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  14 pins available
-        Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
-        Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  9 pins available
-        Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
-        Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  12 pins available
-Info (176215): I/O bank details after I/O pin placement
-    Info (176214): Statistics of I/O banks
-        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 5 total pin(s) used --  6 pins available
-        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  8 pins available
-        Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  11 pins available
-        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  14 pins available
-        Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
-        Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  9 pins available
-        Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
-        Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  12 pins available
-Error (176205): Can't place 99 pins with 2.5 V I/O standard because Fitter has only 86 such free pins available for general purpose I/O placement
-Error (176204): Can't place pins due to device constraints
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
-Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Error (171000): Can't fit design in device
-Warning (169069): Following 32 pins have nothing, GND, or VCC driving datain port -- changes to this connectivity may change fitting results
-    Info (169070): Pin DOUT[0] has GND driving its datain port
-    Info (169070): Pin DOUT[1] has GND driving its datain port
-    Info (169070): Pin DOUT[2] has GND driving its datain port
-    Info (169070): Pin DOUT[3] has GND driving its datain port
-    Info (169070): Pin DOUT[4] has GND driving its datain port
-    Info (169070): Pin DOUT[5] has GND driving its datain port
-    Info (169070): Pin DOUT[6] has GND driving its datain port
-    Info (169070): Pin DOUT[7] has GND driving its datain port
-    Info (169070): Pin DOUT[8] has GND driving its datain port
-    Info (169070): Pin DOUT[9] has GND driving its datain port
-    Info (169070): Pin DOUT[10] has GND driving its datain port
-    Info (169070): Pin DOUT[11] has GND driving its datain port
-    Info (169070): Pin DOUT[12] has GND driving its datain port
-    Info (169070): Pin DOUT[13] has GND driving its datain port
-    Info (169070): Pin DOUT[14] has GND driving its datain port
-    Info (169070): Pin DOUT[15] has GND driving its datain port
-    Info (169070): Pin DOUT[16] has GND driving its datain port
-    Info (169070): Pin DOUT[17] has GND driving its datain port
-    Info (169070): Pin DOUT[18] has GND driving its datain port
-    Info (169070): Pin DOUT[19] has GND driving its datain port
-    Info (169070): Pin DOUT[20] has GND driving its datain port
-    Info (169070): Pin DOUT[21] has GND driving its datain port
-    Info (169070): Pin DOUT[22] has GND driving its datain port
-    Info (169070): Pin DOUT[23] has GND driving its datain port
-    Info (169070): Pin DOUT[24] has GND driving its datain port
-    Info (169070): Pin DOUT[25] has GND driving its datain port
-    Info (169070): Pin DOUT[26] has GND driving its datain port
-    Info (169070): Pin DOUT[27] has GND driving its datain port
-    Info (169070): Pin DOUT[28] has GND driving its datain port
-    Info (169070): Pin DOUT[29] has GND driving its datain port
-    Info (169070): Pin DOUT[30] has GND driving its datain port
-    Info (169070): Pin DOUT[31] has GND driving its datain port
-Info (144001): Generated suppressed messages file C:/Users/Hubert/Desktop/MUC/AcornFPGA/v2.fit.smsg
-Error: Quartus Prime Fitter was unsuccessful. 3 errors, 8 warnings
-    Error: Peak virtual memory: 810 megabytes
-    Error: Processing ended: Thu Jun 22 23:52:42 2017
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:02
-
-
-+----------------------------+
-; Fitter Suppressed Messages ;
-+----------------------------+
-The suppressed messages can be found in C:/Users/Hubert/Desktop/MUC/AcornFPGA/v2.fit.smsg.
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri Jun 23 01:03:50 2017
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off FPGACOMMEXAMPLE -c v2
+Info: Selected device EP4CE6E22C8 for design "v2"
+Info: Low junction temperature is 0 degrees C
+Info: High junction temperature is 85 degrees C
+Info: Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning: Feature LogicLock is only available with a valid subscription license. Please purchase a software subscription to gain full access to this feature.
+Info: Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info: Device EP4CE10E22C8 is compatible
+    Info: Device EP4CE15E22C8 is compatible
+    Info: Device EP4CE22E22C8 is compatible
+Info: Fitter converted 5 user pins into dedicated programming pins
+    Info: Pin ~ALTERA_ASDO_DATA1~ is reserved at location 6
+    Info: Pin ~ALTERA_FLASH_nCE_nCSO~ is reserved at location 8
+    Info: Pin ~ALTERA_DCLK~ is reserved at location 12
+    Info: Pin ~ALTERA_DATA0~ is reserved at location 13
+    Info: Pin ~ALTERA_nCEO~ is reserved at location 101
+Warning: Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Critical Warning: No exact pin location assignment(s) for 99 pins of 100 total pins
+    Info: Pin DOUT[0] not assigned to an exact location on the device
+    Info: Pin DOUT[1] not assigned to an exact location on the device
+    Info: Pin DOUT[2] not assigned to an exact location on the device
+    Info: Pin DOUT[3] not assigned to an exact location on the device
+    Info: Pin DOUT[4] not assigned to an exact location on the device
+    Info: Pin DOUT[5] not assigned to an exact location on the device
+    Info: Pin DOUT[6] not assigned to an exact location on the device
+    Info: Pin DOUT[7] not assigned to an exact location on the device
+    Info: Pin DOUT[8] not assigned to an exact location on the device
+    Info: Pin DOUT[9] not assigned to an exact location on the device
+    Info: Pin DOUT[10] not assigned to an exact location on the device
+    Info: Pin DOUT[11] not assigned to an exact location on the device
+    Info: Pin DOUT[12] not assigned to an exact location on the device
+    Info: Pin DOUT[13] not assigned to an exact location on the device
+    Info: Pin DOUT[14] not assigned to an exact location on the device
+    Info: Pin DOUT[15] not assigned to an exact location on the device
+    Info: Pin DOUT[16] not assigned to an exact location on the device
+    Info: Pin DOUT[17] not assigned to an exact location on the device
+    Info: Pin DOUT[18] not assigned to an exact location on the device
+    Info: Pin DOUT[19] not assigned to an exact location on the device
+    Info: Pin DOUT[20] not assigned to an exact location on the device
+    Info: Pin DOUT[21] not assigned to an exact location on the device
+    Info: Pin DOUT[22] not assigned to an exact location on the device
+    Info: Pin DOUT[23] not assigned to an exact location on the device
+    Info: Pin DOUT[24] not assigned to an exact location on the device
+    Info: Pin DOUT[25] not assigned to an exact location on the device
+    Info: Pin DOUT[26] not assigned to an exact location on the device
+    Info: Pin DOUT[27] not assigned to an exact location on the device
+    Info: Pin DOUT[28] not assigned to an exact location on the device
+    Info: Pin DOUT[29] not assigned to an exact location on the device
+    Info: Pin DOUT[30] not assigned to an exact location on the device
+    Info: Pin DOUT[31] not assigned to an exact location on the device
+    Info: Pin RD not assigned to an exact location on the device
+    Info: Pin WR not assigned to an exact location on the device
+    Info: Pin ADDR[0] not assigned to an exact location on the device
+    Info: Pin ADDR[1] not assigned to an exact location on the device
+    Info: Pin ADDR[2] not assigned to an exact location on the device
+    Info: Pin ADDR[3] not assigned to an exact location on the device
+    Info: Pin ADDR[4] not assigned to an exact location on the device
+    Info: Pin ADDR[5] not assigned to an exact location on the device
+    Info: Pin ADDR[6] not assigned to an exact location on the device
+    Info: Pin ADDR[7] not assigned to an exact location on the device
+    Info: Pin ADDR[8] not assigned to an exact location on the device
+    Info: Pin ADDR[9] not assigned to an exact location on the device
+    Info: Pin ADDR[10] not assigned to an exact location on the device
+    Info: Pin ADDR[11] not assigned to an exact location on the device
+    Info: Pin ADDR[12] not assigned to an exact location on the device
+    Info: Pin ADDR[13] not assigned to an exact location on the device
+    Info: Pin ADDR[14] not assigned to an exact location on the device
+    Info: Pin ADDR[15] not assigned to an exact location on the device
+    Info: Pin ADDR[16] not assigned to an exact location on the device
+    Info: Pin ADDR[17] not assigned to an exact location on the device
+    Info: Pin ADDR[18] not assigned to an exact location on the device
+    Info: Pin ADDR[19] not assigned to an exact location on the device
+    Info: Pin ADDR[20] not assigned to an exact location on the device
+    Info: Pin ADDR[21] not assigned to an exact location on the device
+    Info: Pin ADDR[22] not assigned to an exact location on the device
+    Info: Pin ADDR[23] not assigned to an exact location on the device
+    Info: Pin ADDR[24] not assigned to an exact location on the device
+    Info: Pin ADDR[25] not assigned to an exact location on the device
+    Info: Pin ADDR[26] not assigned to an exact location on the device
+    Info: Pin ADDR[27] not assigned to an exact location on the device
+    Info: Pin ADDR[28] not assigned to an exact location on the device
+    Info: Pin ADDR[29] not assigned to an exact location on the device
+    Info: Pin ADDR[30] not assigned to an exact location on the device
+    Info: Pin ADDR[31] not assigned to an exact location on the device
+    Info: Pin DIN[0] not assigned to an exact location on the device
+    Info: Pin DIN[1] not assigned to an exact location on the device
+    Info: Pin DIN[2] not assigned to an exact location on the device
+    Info: Pin DIN[3] not assigned to an exact location on the device
+    Info: Pin DIN[4] not assigned to an exact location on the device
+    Info: Pin DIN[5] not assigned to an exact location on the device
+    Info: Pin DIN[6] not assigned to an exact location on the device
+    Info: Pin DIN[7] not assigned to an exact location on the device
+    Info: Pin DIN[8] not assigned to an exact location on the device
+    Info: Pin DIN[9] not assigned to an exact location on the device
+    Info: Pin DIN[10] not assigned to an exact location on the device
+    Info: Pin DIN[11] not assigned to an exact location on the device
+    Info: Pin DIN[12] not assigned to an exact location on the device
+    Info: Pin DIN[13] not assigned to an exact location on the device
+    Info: Pin DIN[14] not assigned to an exact location on the device
+    Info: Pin DIN[15] not assigned to an exact location on the device
+    Info: Pin DIN[16] not assigned to an exact location on the device
+    Info: Pin DIN[17] not assigned to an exact location on the device
+    Info: Pin DIN[18] not assigned to an exact location on the device
+    Info: Pin DIN[19] not assigned to an exact location on the device
+    Info: Pin DIN[20] not assigned to an exact location on the device
+    Info: Pin DIN[21] not assigned to an exact location on the device
+    Info: Pin DIN[22] not assigned to an exact location on the device
+    Info: Pin DIN[23] not assigned to an exact location on the device
+    Info: Pin DIN[24] not assigned to an exact location on the device
+    Info: Pin DIN[25] not assigned to an exact location on the device
+    Info: Pin DIN[26] not assigned to an exact location on the device
+    Info: Pin DIN[27] not assigned to an exact location on the device
+    Info: Pin DIN[28] not assigned to an exact location on the device
+    Info: Pin DIN[29] not assigned to an exact location on the device
+    Info: Pin DIN[30] not assigned to an exact location on the device
+    Info: Pin DIN[31] not assigned to an exact location on the device
+    Info: Pin INIT not assigned to an exact location on the device
+Info: Timing-driven compilation is using the TimeQuest Timing Analyzer
+Critical Warning: Synopsys Design Constraints File file not found: 'v2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design
+Info: The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning: No clocks defined in design.
+Info: No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info: The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info: Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
+Info: Starting register packing
+Extra Info: Performing register packing on registers with non-logic cell location assignments
+Extra Info: Completed register packing on registers with non-logic cell location assignments
+Extra Info: Started Fast Input/Output/OE register processing
+Extra Info: Finished Fast Input/Output/OE register processing
+Extra Info: Moving registers into I/O cells, Multiplier Blocks, and RAM blocks to improve timing and density
+Extra Info: Finished moving registers into I/O cells, Multiplier Blocks, and RAM blocks
+Info: Finished register packing
+    Extra Info: No registers were packed into other blocks
+Info: Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info: Number of I/O pins in group: 99 (unused VREF, 2.5V VCCIO, 67 input, 32 output, 0 bidirectional)
+        Info: I/O standards used: 2.5 V.
+Info: I/O bank details before I/O pin placement
+    Info: Statistics of I/O banks
+        Info: I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 5 total pin(s) used --  6 pins available
+        Info: I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  8 pins available
+        Info: I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  11 pins available
+        Info: I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  14 pins available
+        Info: I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
+        Info: I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  9 pins available
+        Info: I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
+        Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  12 pins available
+Info: I/O bank details after I/O pin placement
+    Info: Statistics of I/O banks
+        Info: I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 5 total pin(s) used --  6 pins available
+        Info: I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  8 pins available
+        Info: I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  11 pins available
+        Info: I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  14 pins available
+        Info: I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
+        Info: I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  9 pins available
+        Info: I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
+        Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  12 pins available
+Error: Can't place 99 pins with 2.5 V I/O standard because Fitter has only 86 such free pins available for general purpose I/O placement
+Error: Can't place pins due to device constraints
+Info: Fitter preparation operations ending: elapsed time is 00:00:00
+Warning: Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
+Error: Can't fit design in device
+Warning: Following 32 pins have nothing, GND, or VCC driving datain port -- changes to this connectivity may change fitting results
+    Info: Pin DOUT[0] has GND driving its datain port
+    Info: Pin DOUT[1] has GND driving its datain port
+    Info: Pin DOUT[2] has GND driving its datain port
+    Info: Pin DOUT[3] has GND driving its datain port
+    Info: Pin DOUT[4] has GND driving its datain port
+    Info: Pin DOUT[5] has GND driving its datain port
+    Info: Pin DOUT[6] has GND driving its datain port
+    Info: Pin DOUT[7] has GND driving its datain port
+    Info: Pin DOUT[8] has GND driving its datain port
+    Info: Pin DOUT[9] has GND driving its datain port
+    Info: Pin DOUT[10] has GND driving its datain port
+    Info: Pin DOUT[11] has GND driving its datain port
+    Info: Pin DOUT[12] has GND driving its datain port
+    Info: Pin DOUT[13] has GND driving its datain port
+    Info: Pin DOUT[14] has GND driving its datain port
+    Info: Pin DOUT[15] has GND driving its datain port
+    Info: Pin DOUT[16] has GND driving its datain port
+    Info: Pin DOUT[17] has GND driving its datain port
+    Info: Pin DOUT[18] has GND driving its datain port
+    Info: Pin DOUT[19] has GND driving its datain port
+    Info: Pin DOUT[20] has GND driving its datain port
+    Info: Pin DOUT[21] has GND driving its datain port
+    Info: Pin DOUT[22] has GND driving its datain port
+    Info: Pin DOUT[23] has GND driving its datain port
+    Info: Pin DOUT[24] has GND driving its datain port
+    Info: Pin DOUT[25] has GND driving its datain port
+    Info: Pin DOUT[26] has GND driving its datain port
+    Info: Pin DOUT[27] has GND driving its datain port
+    Info: Pin DOUT[28] has GND driving its datain port
+    Info: Pin DOUT[29] has GND driving its datain port
+    Info: Pin DOUT[30] has GND driving its datain port
+    Info: Pin DOUT[31] has GND driving its datain port
+Error: Quartus II Fitter was unsuccessful. 3 errors, 7 warnings
+    Error: Peak virtual memory: 233 megabytes
+    Error: Processing ended: Fri Jun 23 01:03:50 2017
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:01
 
 

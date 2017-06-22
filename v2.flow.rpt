@@ -1,6 +1,6 @@
 Flow report for v2
-Thu Jun 22 23:52:42 2017
-Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Fri Jun 23 01:03:50 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
 ---------------------
@@ -13,51 +13,49 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   5. Flow Elapsed Time
   6. Flow OS Summary
   7. Flow Log
-  8. Flow Messages
-  9. Flow Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2016  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Intel and sold by Intel or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+------------------------------------+---------------------------------------------+
-; Flow Status                        ; Flow Failed - Thu Jun 22 23:52:42 2017      ;
-; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
-; Revision Name                      ; v2                                          ;
-; Top-level Entity Name              ; acorn_coprocesor                            ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE6E22C8                                 ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1 / 6,272 ( < 1 % )                         ;
-;     Total combinational functions  ; 1 / 6,272 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 0 / 6,272 ( 0 % )                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 100 / 92 ( 109 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
-; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
-; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++------------------------------------+----------------------------------------------+
+; Flow Status                        ; Flow Failed - Fri Jun 23 01:03:50 2017       ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                      ; v2                                           ;
+; Top-level Entity Name              ; acorn_coprocesor                             ;
+; Family                             ; Cyclone IV E                                 ;
+; Device                             ; EP4CE6E22C8                                  ;
+; Timing Models                      ; Preliminary                                  ;
+; Met timing requirements            ; N/A                                          ;
+; Total logic elements               ; 1 / 6,272 ( < 1 % )                          ;
+;     Total combinational functions  ; 1 / 6,272 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 0 / 6,272 ( 0 % )                            ;
+; Total registers                    ; 0                                            ;
+; Total pins                         ; 100 / 92 ( 109 % )                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0 / 276,480 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                               ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                ;
++------------------------------------+----------------------------------------------+
 
 
 +-----------------------------------------+
@@ -65,27 +63,29 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/22/2017 23:52:24 ;
+; Start date & time ; 06/23/2017 01:03:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; v2                  ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                             ;
-+-------------------------------------+----------------------------------------+---------------+------------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name      ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 1096286911535.149816834408364          ; --            ; --               ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --               ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --               ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; acorn_coprocesor ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; acorn_coprocesor ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; acorn_coprocesor ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --               ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --               ; --         ;
-; TOP_LEVEL_ENTITY                    ; acorn_coprocesor                       ; v2            ; --               ; --         ;
-+-------------------------------------+----------------------------------------+---------------+------------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                              ;
++---------------------------------------+---------------------------------------+---------------+------------------+------------+
+; Assignment Name                       ; Value                                 ; Default Value ; Entity Name      ; Section Id ;
++---------------------------------------+---------------------------------------+---------------+------------------+------------+
+; COMPILER_SIGNATURE_ID                 ; 1096286911535.149817262801440         ; --            ; --               ; --         ;
+; CRC_ERROR_OPEN_DRAIN                  ; Off                                   ; On            ; --               ; --         ;
+; MAX_CORE_JUNCTION_TEMP                ; 85                                    ; --            ; --               ; --         ;
+; MIN_CORE_JUNCTION_TEMP                ; 0                                     ; --            ; --               ; --         ;
+; PARTITION_COLOR                       ; 16764057                              ; --            ; acorn_coprocesor ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL   ; PLACEMENT_AND_ROUTING                 ; --            ; acorn_coprocesor ; Top        ;
+; PARTITION_NETLIST_TYPE                ; SOURCE                                ; --            ; acorn_coprocesor ; Top        ;
+; POWER_BOARD_THERMAL_MODEL             ; None (CONSERVATIVE)                   ; --            ; --               ; --         ;
+; POWER_PRESET_COOLING_SOLUTION         ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --               ; --         ;
+; SYNCHRONIZATION_REGISTER_CHAIN_LENGTH ; 2                                     ; 3             ; --               ; --         ;
+; TOP_LEVEL_ENTITY                      ; acorn_coprocesor                      ; v2            ; --               ; --         ;
++---------------------------------------+---------------------------------------+---------------+------------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -93,20 +93,20 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 637 MB              ; 00:00:24                           ;
-; Fitter               ; 00:00:02     ; 1.0                     ; 810 MB              ; 00:00:02                           ;
-; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:26                           ;
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 234 MB              ; 00:00:01                           ;
+; Fitter               ; 00:00:00     ; 1.0                     ; 233 MB              ; 00:00:01                           ;
+; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                     ;
-+----------------------+------------------+-------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name     ; OS Version ; Processor type ;
-+----------------------+------------------+-------------+------------+----------------+
-; Analysis & Synthesis ; Hubert-PC        ; Windows 8.1 ; 6.3        ; x86_64         ;
-; Fitter               ; Hubert-PC        ; Windows 8.1 ; 6.3        ; x86_64         ;
-+----------------------+------------------+-------------+------------+----------------+
++---------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                       ;
++----------------------+------------------+---------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++----------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis ; Hubert-PC        ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter               ; Hubert-PC        ; Windows Vista ; 6.2        ; x86_64         ;
++----------------------+------------------+---------------+------------+----------------+
 
 
 ------------
