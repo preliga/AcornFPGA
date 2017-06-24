@@ -6,60 +6,398 @@ USE IEEE.NUMERIC_STD.ALL;
 ENTITY controller IS PORT
 (
 	CLK			:IN STD_LOGIC;
-	ADDR			:IN STD_LOGIC_VECTOR(31 downto 0);
-	RD				:IN STD_LOGIC;
-	WR				:IN STD_LOGIC;
+	ADDR		:IN STD_LOGIC_VECTOR(31 downto 0);
+	RD			:IN STD_LOGIC;
+	WR			:IN STD_LOGIC;
 	
 	DATA_RD		:IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 	
-	TOKEN_CK		:IN STD_LOGIC;
+	TOKEN_CK	:IN STD_LOGIC;
 	
 	ADR1_RD		:OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	MEM1_RD		:OUT STD_LOGIC;
 	MEM1_WR		:OUT STD_LOGIC;
 	
 	ADD_ONE		:OUT STD_LOGIC;
-	STATE_WR		:OUT STD_LOGIC;
+	STATE_WR	:OUT STD_LOGIC;
 	STATE_RESET	:OUT STD_LOGIC;
-	CA				:OUT STD_LOGIC;
-	CB				:OUT STD_LOGIC;
+	CA			:OUT STD_LOGIC_VECTOR(31 downto 0);
+	CB			:OUT STD_LOGIC_VECTOR(31 downto 0);
 	
-	DATA_WR		:OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	--DATA_WR		:OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	STATUS_WR	:OUT STD_LOGIC_VECTOR(1 downto 0);
 	
 	MEM2_RD		:OUT STD_LOGIC;
 	
 	ADR2_WR		:OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	MEM2_WR		:OUT STD_LOGIC
-	
-	
 );
 END ENTITY;
 
 ARCHITECTURE A1 OF controller IS
-
-	SIGNAL CURR_STATE: STD_LOGIC_VECTOR(6 DOWNTO 0);
-	SIGNAL ADDR_RD: STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SIGNAL ADDR_WR: STD_LOGIC_VECTOR(31 DOWNTO 0);
+	TYPE STATE_TYPE IS (IDLE, INIT1, INIT2, READ_AD_LEN, READ_AD, PROCESS_AD, READ_PT_LEN, READ_PT, PROCESS_PT, FINALIZE, TOKEN, CHECK, MEM_DEL);
+	SIGNAL CURR_STATE: STATE_TYPE;
+	SIGNAL ADDR_AD: STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL ADDR_PT: STD_LOGIC_VECTOR(5 DOWNTO 0);
 	
+	SIGNAL INDEX: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	
+	--SIGNAL WR_BUF: STD_LOGIC;
+	--SIGNAL ADDR_BUF: STD_LOGIC_VECTOR(31 DOWNTO 0);
+	--SIGNAL STATUS: STD_LOGIC_VECTOR(1 DOWNTO 0);
+	SIGNAL OPERATION: STD_LOGIC;  --0=END, 1=DEC
 BEGIN
+	
+	MEM1_WR <= WR WHEN CURR_STATE=IDLE ELSE '0';
+	MEM2_RD <= RD WHEN CURR_STATE=IDLE ELSE '0';
 	
 	-- change state
 	PROCESS(CLK)
 	BEGIN
 		IF(CLK'EVENT AND CLK = '1') THEN
 			CASE CURR_STATE IS
-				WHEN "0000000" =>
+				WHEN IDLE =>
 					IF(ADDR = 0 AND WR = '1') THEN
-						CURR_STATE <= "0000001";
+						CURR_STATE <= INIT1;
 					END IF;
-				WHEN "1111111" =>
-					CURR_STATE <= "0000000";
-				WHEN OTHERS =>
-					CURR_STATE <= CURR_STATE+1;
+				
+				--INITIALIZE--
+				WHEN INIT1 =>
+					IF(INDEX = X"0B") THEN
+						CURR_STATE <= INIT2;
+					END IF;
+					
+				WHEN INIT2 =>
+					IF(INDEX = X"3B") THEN
+						CURR_STATE <= READ_AD_LEN;
+					END IF;
+				
+				--ADITIONAL DATA--
+				WHEN READ_AD_LEN =>
+					IF(ADDR_AD < X"0C") THEN
+						CURR_STATE <= PROCESS_AD;
+					ELSE
+						CURR_STATE <= READ_AD;
+					END IF;
+				WHEN READ_AD =>
+					IF(INDEX = ADDR_AD) THEN
+						CURR_STATE <= PROCESS_AD;
+					END IF;
+				WHEN PROCESS_AD =>
+					IF(INDEX = X"07") THEN
+						CURR_STATE <= READ_PT_LEN;
+					END IF;
+				
+				--PLAIN TEXT--
+				WHEN READ_PT_LEN =>
+					IF(ADDR_PT < ADDR_AD+1) THEN
+						CURR_STATE <= PROCESS_PT;
+					ELSE
+						CURR_STATE <= READ_PT;
+					END IF;
+				WHEN READ_PT =>
+					IF(INDEX = ADDR_PT) THEN
+						CURR_STATE <= PROCESS_PT;
+					END IF;
+				WHEN PROCESS_PT =>
+					IF(INDEX = X"07") THEN
+						CURR_STATE <= FINALIZE;
+					END IF;
+				
+				--TOKEN--
+				WHEN FINALIZE =>
+					IF(INDEX = X"1B") THEN
+						CURR_STATE <= TOKEN;
+					END IF;
+					
+				WHEN TOKEN =>
+					--IF(OPERATION='1' and TOKEN_CK='1') THEN
+					--	CURR_STATE <= MEM_DEL;
+					--ELS
+					IF(OPERATION = '1') THEN
+						CURR_STATE <= CHECK;
+					ELSIF(INDEX = ADDR_PT+4) THEN
+						CURR_STATE <= IDLE;
+					END IF;
+					
+				WHEN CHECK =>
+					IF(TOKEN_CK='1') THEN
+						CURR_STATE <= MEM_DEL;
+					ELSIF(INDEX = ADDR_PT+4) THEN
+						CURR_STATE <= IDLE;
+					END IF;
+					
+				WHEN MEM_DEL =>
+					IF(INDEX = X"00") THEN
+						CURR_STATE <= IDLE; --TODO
+					END IF;
 			END CASE;
 		END IF;
 	END PROCESS;
 	
+	PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			CASE CURR_STATE IS
+				WHEN IDLE =>
+					INDEX <= (2 =>'1', others =>'0');
+				WHEN INIT1|INIT2|PROCESS_AD|PROCESS_PT|TOKEN|CHECK =>
+					INDEX <= INDEX+1;
+					
+					
+					
+					
+				WHEN READ_AD_LEN =>
+					IF(ADDR_AD < X"0C") THEN
+						INDEX <= (others =>'0');
+					ELSE
+						INDEX <= X"0C";
+					END IF;
+				WHEN READ_AD =>
+					IF (INDEX = ADDR_AD) THEN
+						INDEX <= (others =>'0');
+					ELSE
+						INDEX <= INDEX+1;
+					END IF;
+
+				WHEN READ_PT_LEN =>
+					IF(ADDR_PT < ADDR_AD+1) THEN
+						INDEX <= (others =>'0');
+					ELSE
+						INDEX <= ("00" & ADDR_AD)+1;
+					END IF;
+					
+				WHEN READ_PT =>
+					IF (INDEX = ADDR_PT) THEN
+						INDEX <= (others =>'0');
+					ELSE
+						INDEX <= INDEX+1;
+					END IF;
+
+				WHEN FINALIZE =>
+					IF (INDEX = X"1B") THEN
+						INDEX <= ("00" & ADDR_PT)+1;
+					ELSE
+						INDEX <= INDEX+1;
+					END IF;
+				
+				WHEN MEM_DEL =>
+					INDEX <= INDEX-1;
+					
+				WHEN OTHERS =>
+					INDEX <= (others =>'0');
+			END CASE;
+		END IF;
+	END PROCESS;
+	
+	PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			CASE CURR_STATE IS
+				WHEN IDLE|MEM_DEL =>
+					STATE_WR <= '0';
+					STATE_RESET <= '1';
+				WHEN READ_AD_LEN|READ_PT_LEN =>
+					STATE_WR <= '0';
+					STATE_RESET <= '0';
+				WHEN OTHERS =>
+					STATE_WR <= '1';
+					STATE_RESET <= '0';
+			END CASE;
+		END IF;
+	END PROCESS;
+	
+		PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			CASE CURR_STATE IS
+				WHEN PROCESS_AD =>
+					IF(INDEX(2) = '0') THEN
+						CA <= (others => '1');
+						CB <= (others => '1');
+					ELSE
+						CA <= (others => '0');
+						CB <= (others => '1');
+					END IF;
+				WHEN PROCESS_PT =>
+					IF(INDEX(2) = '0') THEN
+						CA <= (others => '1');
+						CB <= (others => '0');
+					ELSE
+						CA <= (others => '0');
+						CB <= (others => '0');
+					END IF;
+				WHEN READ_PT =>
+					CA <= (others => '1');
+					CB <= (others => OPERATION);
+				WHEN TOKEN|CHECK =>
+					CA <= (others => '1');
+					CB <= (others => NOT OPERATION);
+				WHEN IDLE =>
+					CA <= (others => '0');
+					CB <= (others => '0');
+				WHEN OTHERS =>
+					CA <= (others => '1');
+					CB <= (others => '1');
+			END CASE;
+		END IF;
+	END PROCESS;
+	
+	PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			CASE CURR_STATE IS
+				WHEN INIT2 =>
+					IF(INDEX = X"0C") THEN
+						ADD_ONE <= '1';
+					ELSE
+						ADD_ONE <= '0';
+					END IF;
+				WHEN PROCESS_AD =>
+					IF(INDEX = X"00") THEN
+						ADD_ONE <= '1';
+					ELSE
+						ADD_ONE <= '0';
+					END IF;
+				WHEN PROCESS_PT =>
+					IF(INDEX = X"00") THEN
+						ADD_ONE <= '1';
+					ELSE
+						ADD_ONE <= '0';
+					END IF;
+				WHEN others =>
+					ADD_ONE <= '0';
+			END CASE;
+		END IF;
+	END PROCESS;
+	
+	PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			IF(CURR_STATE=IDLE AND ADDR = X"00000000" AND WR = '1') THEN
+				OPERATION <= DATA_RD(0);
+			END IF;
+		END IF;
+	END PROCESS;
+	
+	PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			CASE CURR_STATE IS
+				WHEN IDLE =>
+					IF(ADDR = X"00000001" AND WR = '1') THEN
+						ADDR_AD <= DATA_RD(5 downto 0);
+					END IF;
+				WHEN READ_AD_LEN =>
+					IF(ADDR_AD < X"0C") THEN
+						ADDR_AD <= "001011";
+					END IF;
+				WHEN others =>
+					ADDR_AD <= ADDR_AD;
+			END CASE;
+		END IF;
+	END PROCESS;
+	
+	PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			CASE CURR_STATE IS
+				WHEN IDLE =>
+					IF(ADDR = X"00000002" AND WR = '1') THEN
+						ADDR_PT <= DATA_RD(5 downto 0);
+					END IF;
+				WHEN READ_PT_LEN =>
+					IF(ADDR_PT < ADDR_AD) THEN
+						ADDR_PT <= ADDR_AD;
+					END IF;
+				WHEN others =>
+					ADDR_PT <= ADDR_PT;
+			END CASE;
+		END IF;
+	END PROCESS;
+	
+	PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			--STATUS_WR <= STATUS;
+			CASE CURR_STATE IS
+				WHEN INIT1 =>
+					STATUS_WR <= "01";
+				WHEN READ_PT =>
+					STATUS_WR <= "11";
+				WHEN TOKEN =>
+					IF(OPERATION = '1') THEN
+						STATUS_WR <= "00";
+					ELSE
+						STATUS_WR <= "11";
+					END IF;
+				WHEN OTHERS =>
+					STATUS_WR <= "00";
+			END CASE;
+		END IF;
+	END PROCESS;
+	
+	PROCESS(CURR_STATE)
+	BEGIN
+		CASE CURR_STATE IS
+			WHEN INIT1		=> MEM1_RD <= '1';
+			WHEN INIT2		=> MEM1_RD <= '1';
+			WHEN READ_AD	=> MEM1_RD <= '1';
+			WHEN READ_PT	=> MEM1_RD <= '1';
+			WHEN TOKEN		=> MEM1_RD <= OPERATION;
+			WHEN CHECK		=> MEM1_RD <= '1';
+			WHEN others		=> MEM1_RD <= '0';
+		END CASE;
+	END PROCESS;
+	
+	PROCESS(CURR_STATE)
+	BEGIN
+		CASE CURR_STATE IS
+			WHEN INIT1		=> ADR1_RD <= X"0000000" & INDEX(3 downto 0);
+			WHEN INIT2		=> ADR1_RD <= X"0000000" & "01" & INDEX(1 downto 0);
+			WHEN READ_AD	=> ADR1_RD <= X"000000" & INDEX;
+			WHEN READ_PT	=> ADR1_RD <= X"000000" & INDEX;
+			WHEN TOKEN		=> ADR1_RD <= X"000000" & INDEX;
+			WHEN CHECK		=> ADR1_RD <= X"000000" & INDEX;
+			WHEN others		=> ADR1_RD <= (31 downto 0 =>'0');
+		END CASE;
+	END PROCESS;
+	
+	PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			--MEM2_WR <= WR_BUF;
+			CASE CURR_STATE IS
+				WHEN INIT1 =>
+					IF(INDEX = X"04") THEN
+						MEM2_WR <= '1';
+					ELSE
+						MEM2_WR <= '0';
+					END IF;
+				WHEN READ_PT|MEM_DEL =>
+					MEM2_WR <= '1';
+				WHEN TOKEN =>
+					MEM2_WR <= not OPERATION;
+				WHEN OTHERS =>
+					MEM2_WR <= '0';
+			END CASE;
+		END IF;
+	END PROCESS;
+	
+	PROCESS(CLK)
+	BEGIN
+		IF(CLK'EVENT AND CLK = '1') THEN
+			--ADR2_WR <= ADDR_BUF;
+			CASE CURR_STATE IS
+				WHEN INIT1		=> ADR2_WR <= X"0000000" & INDEX(3 downto 0);
+				WHEN INIT2		=> ADR2_WR <= X"0000000" & "01" & INDEX(1 downto 0);
+				WHEN READ_AD	=> ADR2_WR <= X"000000" & INDEX;
+				WHEN READ_PT	=> ADR2_WR <= X"000000" & INDEX;
+				WHEN TOKEN		=> ADR2_WR <= X"000000" & INDEX;
+				WHEN MEM_DEL	=> ADR2_WR <= X"000000" & INDEX;
+				WHEN others		=> ADR2_WR <= (31 downto 0 =>'0');
+			END CASE;
+		END IF;
+	END PROCESS;
 	
 END ARCHITECTURE;
